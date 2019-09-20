@@ -7,7 +7,7 @@
 byte nth[sensorAmnt];
 byte ccValues[panelAmnt];
 byte rawSerial[cByteAmnt];
-byte teensyData[cTeensyAmnt];
+bool teensyState[cTeensyAmnt][cPinAmnt];
 
 bool serialState = 0;
 byte sCount = 0;
@@ -18,11 +18,6 @@ void setup() {
   //turn on onboard LED
   pinMode(13,OUTPUT);
   digitalWrite(13,HIGH);    
-
-  for(int i = 0; i < sizeof(nth); i++){
-    nth[i] = i;
-  }//for
-    
 }
 
 void loop() {  
@@ -39,8 +34,8 @@ void loop() {
       }//if
     }else{
       if(incomingbyte > -1 && incomingbyte <= 128){
-        //if uneven << 4
-        rawSerial[sCount] = incomingbyte << ((sCount & 1) << 2);
+        //shifting uneven data so the raw data can be put back together
+        rawSerial[sCount] = incomingbyte << ((sCount & 1) << 2); //if uneven << 4
         //number of incoming data
         sCount++;
       }else{
@@ -48,16 +43,14 @@ void loop() {
         sCount = 0;        
       }//if
     }//if
-    
   }//if
 
   //join bytes
   for(int i = 0; i < cTeensyAmnt; i++){
-    teensyData[i] = rawSerial[i<<1] | rawSerial[i+1];
-    Serial.print(teensyData[i]);
-    Serial.print(" ");
+    //putting bytes back together
+    byteToBits((rawSerial[i<<1] | rawSerial[(i<<1)+1]), teensyState[i]);
+    
   }//for
-  Serial.println();
   
   for(int i = 0; i < panelAmnt; i++){
     usbMIDI.sendControlChange(i, ccValues[i], 0);
@@ -66,14 +59,12 @@ void loop() {
 }//loop
 
 //function for converting bytes to bits
-bool * byteToBits(byte b){
+void byteToBits(byte b, bool * bArray){
 
-  static bool bArray[cPinAmnt];
   for(int i = 0; i < 8; i++){
     bArray[i] = ((128 >> i) & b) >> (7-i);
   }//for
 
-  return bArray;
 }//byteToBits
 
 //function for converting an array of bits to a byte
