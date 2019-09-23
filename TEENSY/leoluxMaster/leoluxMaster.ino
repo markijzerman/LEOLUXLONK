@@ -1,19 +1,21 @@
-#define panelAmnt 20
-#define sensorAmnt 128
-#define cPinAmnt  8
-#define cTeensyAmnt 16
-#define cByteAmnt 2
+/*------------------------------------
+leolux master teensy code
+Code for receiving data from the leolux reader teensys
+The data received is passed trough as midi to a max/msp patch
+------------------------------------*/
 
-byte nth[sensorAmnt];
-byte ccValues[panelAmnt];
+#define cByteAmnt 2
+#define cTeensyAmnt 16
+
 byte rawSerial[cByteAmnt];
-bool teensyState[cPinAmnt];
+byte oldData[cTeensyAmnt][cByteAmnt];
 
 bool serialState = 0;
 byte sCount = 0;
 byte ccId = 0;
 
 void setup() {
+  //start serial communications with other teenys
   Serial1.begin(9600);
   
   //turn on onboard LED
@@ -25,7 +27,7 @@ void loop() {
 
   //if there is Serial data availible 
   if (Serial1.available() > 0) {
-
+    //read serial data
     byte incomingbyte = Serial1.read();
 
     //if id byte is detected
@@ -35,16 +37,19 @@ void loop() {
     }else if(incomingbyte > -1){
       rawSerial[sCount] = incomingbyte;
       //number of incoming data
-      sCount++;
-      //send data when at last bit
-      if(sCount == 1){
-        //first send the first bytes then the last bytes to max
-        //order of the data that is send is important here!
-        usbMIDI.sendControlChange(ccId, rawSerial[1], 2);  
-        usbMIDI.sendControlChange(ccId, rawSerial[0], 1);        
-      }
+      sCount++;          
     }//if
-
+    
+    //send midi if paramaters have changed
+    if(rawSerial[0] != oldData[ccId][0] || rawSerial[1] != oldData[ccId][1]){
+      //first send the first bytes then the last bytes to max
+      //order of the data that is send is important here!
+      usbMIDI.sendControlChange(ccId, rawSerial[1], 2);  
+      usbMIDI.sendControlChange(ccId, rawSerial[0], 1);
+      oldData[ccId][0] = rawSerial[0];
+      oldData[ccId][1] = rawSerial[1];   
+    }
+       
   }//if
     
 }//loop

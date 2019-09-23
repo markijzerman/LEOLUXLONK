@@ -1,3 +1,9 @@
+/*------------------------------------
+leolux reader teensy code
+Code for reading hall sensor data and passing data trough that it receives 
+this data is then sent trough to another leolux reader teensy or a master teensy
+------------------------------------*/
+
 #define cTeensyId 1
 #define cPinAmnt  8
 #define cSensTresh 500
@@ -31,13 +37,15 @@ void setup() {
 
 void loop() {
 
-  //loop trough pins
+  //go trough pins
   for(int i = 0; i < cPinAmnt; i++){
     //read sensor data
     sensorData[i] = analogRead(cPinArray[i]);
+    
+    //do some math so evereything can be done in the same for loop
     //divide sensordata between to arrays
     byte aDiv = i>>2;      //i>>2 == i/4 
-    //invert becease of bite order
+    //invert count becease of byte order
     byte aMod = 3 - (i&3); //i&3 == i%4
 
     //if magnet is in range
@@ -52,7 +60,7 @@ void loop() {
   /*convert array of sensorstates to one byte
   shift data to the right [10010000]>>4 == [00001001]
   this is done so the number is less then 128
-  in max these bytes will be joined together again
+  in max/msp these bytes will be joined together again
   */
   sData1 =  bitsToByte(sensorState[0])>>4;
   sData2 =  bitsToByte(sensorState[1])>>4;  
