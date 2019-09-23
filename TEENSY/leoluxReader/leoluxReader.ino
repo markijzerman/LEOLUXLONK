@@ -1,11 +1,10 @@
-#define cTeensyId 15
+#define cTeensyId 1
 #define cPinAmnt  8
 #define cSensTresh 500
 #define cTeensyAmnt 16
 #define cByteAmnt 32
 
 const byte cPinArray[cPinAmnt] = {A9,A7,A5,A3,A1,A0,A2,A4};
-byte serialReceive[30];
 
 int  sensorData[cPinAmnt];
 bool sensorState[2][cPinAmnt];
@@ -26,10 +25,6 @@ void setup() {
   
   //start serial communication
   Serial1.begin(9600);
-
-  for(int i = 0; i < 30; i++){
-    serialReceive[i] = 56;
-  }
 
 }//loop
 
@@ -60,13 +55,21 @@ void loop() {
   */
   byte sData1 =  bitsToByte(sensorState[0])>>4;
   byte sData2 =  bitsToByte(sensorState[1])>>4;  
+  static byte oldData1 = sData1;
+  static byte oldData2 = sData2;
 
-  //send first bit bit
-  Serial1.write(255);
-     
-  //send data from this teensy
-  Serial1.write(sData1);
-  Serial1.write(sData2);
+  //if value changes send serial data
+  if(sData1 != oldData1 || sData2 != oldData2){
+    //send teensy id
+    Serial1.write(200+cTeensyId);   
+    //send data from this teensy
+    Serial1.write(sData1);
+    Serial1.write(sData2);
+    Serial.println((String)sData1 + " " + (String)sData2);
+    oldData1 = sData1;
+    oldData2 = sData2;
+  }
+
     
 }//loop
 
@@ -90,14 +93,4 @@ byte bitsToByte(bool * bitArray){
   return b;
 
 }//bitsToByte
-
-void testSerial(){
-  static int x;
-  Serial1.write(255);
-  for(int i = 0; i < cByteAmnt; i++){
-    Serial1.write(i+x%128);
-  }//for  
-
-  x=x+1%128;
-}//testSerial
 

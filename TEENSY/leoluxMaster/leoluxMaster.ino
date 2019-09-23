@@ -2,7 +2,7 @@
 #define sensorAmnt 128
 #define cPinAmnt  8
 #define cTeensyAmnt 16
-#define cByteAmnt 32
+#define cByteAmnt 2
 
 byte nth[sensorAmnt];
 byte ccValues[panelAmnt];
@@ -11,6 +11,7 @@ bool teensyState[cTeensyAmnt][cPinAmnt];
 
 bool serialState = 0;
 byte sCount = 0;
+byte ccId = 0;
 
 void setup() {
   Serial1.begin(9600);
@@ -26,56 +27,28 @@ void loop() {
   if (Serial1.available() > 0) {
 
     byte incomingbyte = Serial1.read();
-
     //if first bit is detected
-    if(serialState == 0){
-      if(incomingbyte == 255){
-        serialState = 1;
-      }//if
-    }else{
-      if(incomingbyte > -1 && incomingbyte <= 128){
-        //shifting uneven data so the raw data can be put back together
-        rawSerial[sCount] = incomingbyte << ((sCount & 1) << 2); //if uneven << 4
-        //number of incoming data
-        sCount++;
-      }else{
-        serialState = 0;  
-        sCount = 0;        
-      }//if
-    }//if
+    if(incomingbyte >= 200){
+      ccId = incomingbyte-200;
+      sCount=0;
+    }else if(incomingbyte > -1){
+      rawSerial[sCount] = incomingbyte;
+      //number of incoming data
+      sCount++;
+    }
+  }//if
+    
+  static byte oldSerial1 = rawSerial[0]; 
+  static byte oldSerial2 = rawSerial[1]; 
+
+  //if serial values change
+  if(oldSerial1 != rawSerial[0] || oldSerial2 != rawSerial[1]){
+    //first send the first bytes then the last bytes
+    //order of the midi that is sent is important here!
+    usbMIDI.sendControlChange(ccId, rawSerial[1], 2);  
+    usbMIDI.sendControlChange(ccId, rawSerial[0], 1);
+    oldSerial1 = rawSerial[0]; 
+    oldSerial2 = rawSerial[1]; 
   }//if
 
-  //join bytes
-  for(int i = 0; i < cTeensyAmnt; i++){
-    //putting bytes back together
-    byteToBits((rawSerial[i<<1] | rawSerial[(i<<1)+1]), teensyState[i]);
-    
-  }//for
-  
-  for(int i = 0; i < panelAmnt; i++){
-    usbMIDI.sendControlChange(i, ccValues[i], 0);
-  }//for
-  
 }//loop
-
-//function for converting bytes to bits
-void byteToBits(byte b, bool * bArray){
-
-  for(int i = 0; i < 8; i++){
-    bArray[i] = ((128 >> i) & b) >> (7-i);
-  }//for
-
-}//byteToBits
-
-//function for converting an array of bits to a byte
-byte bitsToByte(bool * bitArray){
-
-  byte b = 0;
-  for(int i = 0; i < 8; i++){
-    b = (b << 1) | (bitArray[i] & 1);
-  }//for
-
-  return b;
-
-}//bitsToByte
-
