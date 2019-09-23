@@ -1,4 +1,4 @@
-#define cTeensyId 0
+#define cTeensyId 1
 #define cPinAmnt  8
 #define cSensTresh 500
 #define cTeensyAmnt 16
@@ -7,6 +7,8 @@ const byte cPinArray[cPinAmnt] = {A9,A7,A5,A3,A1,A0,A2,A4};
 
 int  sensorData[cPinAmnt];
 bool sensorState[2][cPinAmnt];
+byte sData1 = 0;
+byte sData2 = 0;
 
 void setup() {
 
@@ -46,17 +48,14 @@ void loop() {
     }//if
     
   }//for
-
-  checkOtherTeensys();
-
   
   /*convert array of sensorstates to one byte
   shift data to the right [10010000]>>4 == [00001001]
   this is done so the number is less then 128
   in max these bytes will be joined together again
   */
-  byte sData1 =  bitsToByte(sensorState[0])>>4;
-  byte sData2 =  bitsToByte(sensorState[1])>>4;  
+  sData1 =  bitsToByte(sensorState[0])>>4;
+  sData2 =  bitsToByte(sensorState[1])>>4;  
   static byte oldData1 = sData1;
   static byte oldData2 = sData2;
 
@@ -71,6 +70,8 @@ void loop() {
     oldData2 = sData2;
   }
 
+  //check if other teensys have data to send
+  checkOtherTeensys();
     
 }//loop
 

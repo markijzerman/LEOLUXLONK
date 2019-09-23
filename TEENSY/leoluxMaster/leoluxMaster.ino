@@ -7,7 +7,7 @@
 byte nth[sensorAmnt];
 byte ccValues[panelAmnt];
 byte rawSerial[cByteAmnt];
-bool teensyState[cTeensyAmnt][cPinAmnt];
+bool teensyState[cPinAmnt];
 
 bool serialState = 0;
 byte sCount = 0;
@@ -27,6 +27,7 @@ void loop() {
   if (Serial1.available() > 0) {
 
     byte incomingbyte = Serial1.read();
+
     //if id byte is detected
     if(incomingbyte >= 200){
       ccId = incomingbyte-200;
@@ -35,20 +36,17 @@ void loop() {
       rawSerial[sCount] = incomingbyte;
       //number of incoming data
       sCount++;
-    }
+      //send data when at last bit
+      if(sCount == 1){
+        //first send the first bytes then the last bytes to max
+        //order of the data that is send is important here!
+        usbMIDI.sendControlChange(ccId, rawSerial[1], 2);  
+        usbMIDI.sendControlChange(ccId, rawSerial[0], 1);        
+      }
+    }//if
+
   }//if
     
-  static byte oldSerial1 = rawSerial[0]; 
-  static byte oldSerial2 = rawSerial[1]; 
-
-  //if serial values change
-  if(oldSerial1 != rawSerial[0] || oldSerial2 != rawSerial[1]){
-    //first send the first bytes then the last bytes to max
-    //order of the data that is send is important here!
-    usbMIDI.sendControlChange(ccId, rawSerial[1], 2);  
-    usbMIDI.sendControlChange(ccId, rawSerial[0], 1);
-    oldSerial1 = rawSerial[0]; 
-    oldSerial2 = rawSerial[1]; 
-  }//if
-
 }//loop
+
+
