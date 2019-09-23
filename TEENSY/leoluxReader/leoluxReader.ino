@@ -1,8 +1,7 @@
-#define cTeensyId 1
+#define cTeensyId 0
 #define cPinAmnt  8
 #define cSensTresh 500
 #define cTeensyAmnt 16
-#define cByteAmnt 32
 
 const byte cPinArray[cPinAmnt] = {A9,A7,A5,A3,A1,A0,A2,A4};
 
@@ -47,11 +46,14 @@ void loop() {
     }//if
     
   }//for
+
+  checkOtherTeensys();
+
   
   /*convert array of sensorstates to one byte
   shift data to the right [10010000]>>4 == [00001001]
   this is done so the number is less then 128
-  in the master code these bytes will be joined together again
+  in max these bytes will be joined together again
   */
   byte sData1 =  bitsToByte(sensorState[0])>>4;
   byte sData2 =  bitsToByte(sensorState[1])>>4;  
@@ -65,13 +67,29 @@ void loop() {
     //send data from this teensy
     Serial1.write(sData1);
     Serial1.write(sData2);
-    Serial.println((String)sData1 + " " + (String)sData2);
     oldData1 = sData1;
     oldData2 = sData2;
   }
 
     
 }//loop
+
+void checkOtherTeensys(){
+  //if there is serial data availible
+  if (Serial1.available() > 0) {
+    //pass data trough
+    byte incomingbyte = Serial1.read();
+    Serial1.write(incomingbyte);
+  }//if
+}//checkData
+
+void fakeOtherTeensys(){
+  for(int i = 0; i < cTeensyAmnt; i++){
+    Serial1.write(i+200); 
+    Serial1.write(0);
+    Serial1.write(i);        
+  }
+}//void
 
 //function for converting bytes to bits
 void byteToBits(byte b, bool * bArray){

@@ -27,7 +27,7 @@ void loop() {
   if (Serial1.available() > 0) {
 
     byte incomingbyte = Serial1.read();
-    //if first bit is detected
+    //if id byte is detected
     if(incomingbyte >= 200){
       ccId = incomingbyte-200;
       sCount=0;
@@ -43,8 +43,8 @@ void loop() {
 
   //if serial values change
   if(oldSerial1 != rawSerial[0] || oldSerial2 != rawSerial[1]){
-    //first send the first bytes then the last bytes
-    //order of the midi that is sent is important here!
+    //first send the first bytes then the last bytes to max
+    //order of the data that is send is important here!
     usbMIDI.sendControlChange(ccId, rawSerial[1], 2);  
     usbMIDI.sendControlChange(ccId, rawSerial[0], 1);
     oldSerial1 = rawSerial[0]; 
