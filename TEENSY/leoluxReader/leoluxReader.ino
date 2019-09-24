@@ -76,10 +76,14 @@ void loop() {
     Serial1.write(sData2);
     oldData1 = sData1;
     oldData2 = sData2;
+
+    //fakeOtherTeensys();
   }
 
   //check if other teensys have data to send
   checkOtherTeensys();
+
+
     
 }//loop
 
