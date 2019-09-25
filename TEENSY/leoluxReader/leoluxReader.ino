@@ -4,7 +4,7 @@ Code for reading hall sensor data and passing data trough that it receives
 this data is then sent trough to another leolux reader teensy or a master teensy
 ------------------------------------*/
 
-#define cTeensyId 1
+#define cTeensyId 0
 #define cPinAmnt  8
 #define cSensTresh 500
 #define cTeensyAmnt 16
