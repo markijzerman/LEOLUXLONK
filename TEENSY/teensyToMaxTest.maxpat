@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 191.0, 79.0, 1345.0, 915.0 ],
+		"rect" : [ 822.0, 79.0, 1345.0, 915.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,16 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 86.0, 129.0, 150.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"cols" : 20,
 					"fontface" : 0,
 					"fontname" : "Arial",
@@ -48,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "list", "", "", "" ],
-					"patching_rect" : [ 357.0, 1545.0, 788.0, 48.0 ],
+					"patching_rect" : [ 354.0, 1588.0, 788.0, 48.0 ],
 					"rows" : 1
 				}
 
