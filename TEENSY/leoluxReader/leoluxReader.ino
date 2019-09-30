@@ -97,6 +97,8 @@ void checkOtherTeensys(){
 }//checkData
 
 void fakeOtherTeensys(){
+  static int fake = 0;
+  
   for(int i = 0; i < cTeensyAmnt; i++){
     Serial1.write(i+200); 
     Serial1.write(0);
