@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 579.0, 558.0, 923.0, 734.0 ],
+		"rect" : [ 190.0, 327.0, 923.0, 734.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -495,7 +495,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1196.0, 557.0, 30.0, 30.0 ]
+					"patching_rect" : [ 1196.0, 667.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -554,8 +554,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1164.0, 491.0, 107.0, 22.0 ],
-					"text" : "loop 1, startloop, 1"
+					"patching_rect" : [ 1164.0, 491.0, 68.0, 22.0 ],
+					"text" : "startloop, 1"
 				}
 
 			}
@@ -586,19 +586,21 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-138",
+					"linecount" : 9,
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 1196.0, 524.0, 52.0, 22.0 ],
+					"patching_rect" : [ 1196.0, 524.0, 80.0, 129.0 ],
 					"saved_object_attributes" : 					{
 						"basictuning" : 440,
-						"followglobaltempo" : 0,
+						"followglobaltempo" : 1,
 						"formantcorrection" : 0,
+						"lock" : 1,
 						"loopend" : [ 0.0, "ms" ],
 						"loopstart" : [ 0.0, "ms" ],
 						"mode" : "basic",
-						"originallength" : [ 0.0, "ticks" ],
+						"originallength" : [ 18, 2, 0, "bbu" ],
 						"originaltempo" : 120.0,
 						"phase" : [ 0.0, "ticks" ],
 						"pitchcorrection" : 0,
@@ -606,7 +608,7 @@
 						"timestretch" : [ 0 ]
 					}
 ,
-					"text" : "groove~"
+					"text" : "groove~ @transport 1 @loop 1 @followglobaltempo 1 @lock 1 @originallength 18.2.0 @phase 0"
 				}
 
 			}
@@ -965,7 +967,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 798.0, 557.0, 30.0, 30.0 ]
+					"patching_rect" : [ 798.0, 680.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -1024,8 +1026,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 766.0, 491.0, 107.0, 22.0 ],
-					"text" : "loop 1, startloop, 1"
+					"patching_rect" : [ 766.0, 491.0, 68.0, 22.0 ],
+					"text" : "startloop, 1"
 				}
 
 			}
@@ -1056,19 +1058,21 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-102",
+					"linecount" : 9,
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 798.0, 524.0, 52.0, 22.0 ],
+					"patching_rect" : [ 798.0, 524.0, 75.0, 129.0 ],
 					"saved_object_attributes" : 					{
 						"basictuning" : 440,
-						"followglobaltempo" : 0,
+						"followglobaltempo" : 1,
 						"formantcorrection" : 0,
+						"lock" : 1,
 						"loopend" : [ 0.0, "ms" ],
 						"loopstart" : [ 0.0, "ms" ],
 						"mode" : "basic",
-						"originallength" : [ 0.0, "ticks" ],
+						"originallength" : [ 18, 2, 0, "bbu" ],
 						"originaltempo" : 120.0,
 						"phase" : [ 0.0, "ticks" ],
 						"pitchcorrection" : 0,
@@ -1076,7 +1080,7 @@
 						"timestretch" : [ 0 ]
 					}
 ,
-					"text" : "groove~"
+					"text" : "groove~ @transport 1 @loop 1 @followglobaltempo 1 @lock 1 @originallength 18.2.0 @phase 0"
 				}
 
 			}
@@ -1435,7 +1439,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 422.75, 557.0, 30.0, 30.0 ]
+					"patching_rect" : [ 422.75, 673.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -1494,8 +1498,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 390.75, 491.0, 107.0, 22.0 ],
-					"text" : "loop 1, startloop, 1"
+					"patching_rect" : [ 390.75, 491.0, 68.0, 22.0 ],
+					"text" : "startloop, 1"
 				}
 
 			}
@@ -1526,19 +1530,21 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-48",
+					"linecount" : 9,
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 422.75, 524.0, 52.0, 22.0 ],
+					"patching_rect" : [ 422.75, 524.0, 80.0, 129.0 ],
 					"saved_object_attributes" : 					{
 						"basictuning" : 440,
-						"followglobaltempo" : 0,
+						"followglobaltempo" : 1,
 						"formantcorrection" : 0,
+						"lock" : 1,
 						"loopend" : [ 0.0, "ms" ],
 						"loopstart" : [ 0.0, "ms" ],
 						"mode" : "basic",
-						"originallength" : [ 0.0, "ticks" ],
+						"originallength" : [ 18, 2, 0, "bbu" ],
 						"originaltempo" : 120.0,
 						"phase" : [ 0.0, "ticks" ],
 						"pitchcorrection" : 0,
@@ -1546,7 +1552,7 @@
 						"timestretch" : [ 0 ]
 					}
 ,
-					"text" : "groove~"
+					"text" : "groove~ @transport 1 @loop 1 @followglobaltempo 1 @lock 1 @originallength 18.2.0 @phase 0"
 				}
 
 			}
@@ -1905,7 +1911,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 48.75, 557.0, 30.0, 30.0 ]
+					"patching_rect" : [ 48.75, 678.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -1988,8 +1994,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 16.75, 491.0, 107.0, 22.0 ],
-					"text" : "loop 1, startloop, 1"
+					"patching_rect" : [ 16.75, 491.0, 68.0, 22.0 ],
+					"text" : "startloop, 1"
 				}
 
 			}
@@ -2020,19 +2026,21 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
+					"linecount" : 8,
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 48.75, 524.0, 52.0, 22.0 ],
+					"patching_rect" : [ 48.75, 548.0, 99.0, 116.0 ],
 					"saved_object_attributes" : 					{
 						"basictuning" : 440,
-						"followglobaltempo" : 0,
+						"followglobaltempo" : 1,
 						"formantcorrection" : 0,
+						"lock" : 1,
 						"loopend" : [ 0.0, "ms" ],
 						"loopstart" : [ 0.0, "ms" ],
 						"mode" : "basic",
-						"originallength" : [ 0.0, "ticks" ],
+						"originallength" : [ 18, 2, 0, "bbu" ],
 						"originaltempo" : 120.0,
 						"phase" : [ 0.0, "ticks" ],
 						"pitchcorrection" : 0,
@@ -2040,7 +2048,7 @@
 						"timestretch" : [ 0 ]
 					}
 ,
-					"text" : "groove~"
+					"text" : "groove~ @transport 1 @loop 1 @followglobaltempo 1 @lock 1 @originallength 18.2.0 @phase 0"
 				}
 
 			}
@@ -3458,9 +3466,9 @@
 , 			{
 				"name" : "Default M4L",
 				"default" : 				{
-					"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ],
 					"fontsize" : [ 11.0 ],
-					"fontname" : [ "Arial Bold" ]
+					"fontname" : [ "Arial Bold" ],
+					"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3469,9 +3477,9 @@
 , 			{
 				"name" : "Default M4L Poletti",
 				"default" : 				{
-					"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ],
 					"fontsize" : [ 10.0 ],
-					"fontname" : [ "Arial Bold" ]
+					"fontname" : [ "Arial Bold" ],
+					"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3481,6 +3489,8 @@
 				"name" : "Default M4L-1",
 				"default" : 				{
 					"fontface" : [ 1 ],
+					"fontsize" : [ 11.0 ],
+					"fontname" : [ "Arial" ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -3489,9 +3499,7 @@
 						"angle" : 270.0,
 						"proportion" : 0.39
 					}
-,
-					"fontsize" : [ 11.0 ],
-					"fontname" : [ "Arial" ]
+
 				}
 ,
 				"parentstyle" : "",
@@ -3517,6 +3525,8 @@
 , 			{
 				"name" : "jbb",
 				"default" : 				{
+					"fontsize" : [ 9.0 ],
+					"fontname" : [ "Arial" ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -3525,9 +3535,7 @@
 						"angle" : 270.0,
 						"proportion" : 0.39
 					}
-,
-					"fontsize" : [ 9.0 ],
-					"fontname" : [ "Arial" ]
+
 				}
 ,
 				"parentstyle" : "",
