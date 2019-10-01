@@ -1,0 +1,21 @@
+{
+	"pattrstorage" : 	{
+		"name" : "FILTERFAMILYPRESET",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"amtSmoothing" : [ 50 ],
+					"amtPanels" : [ 18 ],
+					"amtSensors" : [ 96 ],
+					"amtMeter" : [ 12 ],
+					"silenceAfterSec" : [ 0 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}
