@@ -6,6 +6,11 @@ The data received is passed trough as midi to a max/msp patch
 
 #define cByteAmnt 2
 #define cTeensyAmnt 16
+#define cTimerSpeed 1000
+
+#include <Metro.h> 
+
+Metro updateMetro = Metro(cTimerSpeed); //timer for update data
 
 byte rawSerial[cByteAmnt];
 byte oldData[cTeensyAmnt][cByteAmnt];
@@ -17,6 +22,11 @@ byte ccId = 0;
 void setup() {
   //start serial communications with other teenys
   Serial1.begin(9600);
+
+  for(int i = 0; i < cTeensyAmnt; i++){
+    oldData[i][0] = 0;
+    oldData[i][1] = 0;    
+  }
   
   //turn on onboard LED
   pinMode(13,OUTPUT);
@@ -29,7 +39,7 @@ void loop() {
   if (Serial1.available() > 0) {
     //read serial data
     byte incomingbyte = Serial1.read();
-
+    //Serial.println(incomingbyte);
     //if id byte is detected
     if(incomingbyte >= 200){
       ccId = incomingbyte-200;
@@ -48,10 +58,21 @@ void loop() {
       usbMIDI.sendControlChange(ccId, rawSerial[0], 1);
       oldData[ccId][0] = rawSerial[0];
       oldData[ccId][1] = rawSerial[1];   
-    }
-       
+    }//if
+
+  //if there is no serial data availible 
+  //send all data that is stored is send every second
+  }else if(updateMetro.check() == 1) { 
+    updateData();
   }//if
     
 }//loop
 
+void updateData(){
+  for(int i = 0; i < cTeensyAmnt; i++){ 
+    usbMIDI.sendControlChange(i, oldData[i][1], 2);  
+    usbMIDI.sendControlChange(i, oldData[i][0], 1);    
+  }//for
+  
+}
 
