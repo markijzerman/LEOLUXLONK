@@ -4,10 +4,11 @@ Code for reading hall sensor data and passing data trough that it receives
 this data is then sent trough to another leolux reader teensy or a master teensy
 ------------------------------------*/
 
-#define cTeensyId 0
+#define cTeensyId 1
 #define cPinAmnt  8
-#define cSensTresh 500
+#define cSensTresh 100
 #define cTeensyAmnt 16
+#define cTimerSpeed 1000
 
 const byte cPinArray[cPinAmnt] = {A9,A7,A5,A3,A1,A0,A2,A4};
 
@@ -15,6 +16,9 @@ int  sensorData[cPinAmnt];
 bool sensorState[2][cPinAmnt];
 byte sData1 = 0;
 byte sData2 = 0;
+byte oldData1 = 0;
+byte oldData2 = 0;
+bool x = 1;
 
 void setup() {
 
@@ -54,8 +58,11 @@ void loop() {
     }else{
       sensorState[aDiv][aMod] = 1;
     }//if
-    
+    //Serial.print(sensorData[i]);
+    //Serial.print(" ");
   }//for
+  //Serial.println();
+  //delay(10);
   
   /*convert array of sensorstates to one byte
   shift data to the right [10010000]>>4 == [00001001]
@@ -64,8 +71,6 @@ void loop() {
   */
   sData1 =  bitsToByte(sensorState[0])>>4;
   sData2 =  bitsToByte(sensorState[1])>>4;  
-  static byte oldData1 = sData1;
-  static byte oldData2 = sData2;
 
   //if value changes send serial data
   if(sData1 != oldData1 || sData2 != oldData2){
@@ -77,14 +82,14 @@ void loop() {
     oldData1 = sData1;
     oldData2 = sData2;
 
-    //fakeOtherTeensys();
+    //change LED state when data is sent
+    digitalWrite(13,x);
+    x=(x+1)&1;   
   }
 
   //check if other teensys have data to send
   checkOtherTeensys();
-
-
-    
+  
 }//loop
 
 void checkOtherTeensys(){
@@ -95,16 +100,6 @@ void checkOtherTeensys(){
     Serial1.write(incomingbyte);
   }//if
 }//checkData
-
-void fakeOtherTeensys(){
-  static int fake = 0;
-  
-  for(int i = 0; i < cTeensyAmnt; i++){
-    Serial1.write(i+200); 
-    Serial1.write(0);
-    Serial1.write(i);        
-  }
-}//void
 
 //function for converting bytes to bits
 void byteToBits(byte b, bool * bArray){
