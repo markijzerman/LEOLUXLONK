@@ -5,11 +5,12 @@
 			"1" : 			{
 				"id" : 1,
 				"data" : 				{
-					"amtSmoothing" : [ 50 ],
+					"amtMeter" : [ 12 ],
 					"amtPanels" : [ 14 ],
 					"amtSensors" : [ 96 ],
-					"amtMeter" : [ 12 ],
-					"silenceAfterSec" : [ 0 ]
+					"amtSmoothing" : [ 50 ],
+					"fadeInOutTime" : [ 0.5 ],
+					"silenceAfterSec" : [ 2 ]
 				}
 
 			}
