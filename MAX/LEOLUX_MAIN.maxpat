@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 966.0, 138.0, 653.0, 795.0 ],
+		"rect" : [ 1494.0, 128.0, 653.0, 795.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,55 @@
 		"subpatcher_template" : "",
 		"showontab" : 1,
 		"boxes" : [ 			{
+				"box" : 				{
+					"automouse" : 0,
+					"cols" : 20,
+					"colwidth" : 30,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"hscroll" : 0,
+					"id" : "obj-172",
+					"maxclass" : "jit.cellblock",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "list", "", "", "" ],
+					"patching_rect" : [ 978.0, 807.0, 464.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 7.5, 394.0, 423.5, 22.0 ],
+					"rows" : 1,
+					"vscroll" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-171",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_matrix", "" ],
+					"patching_rect" : [ 1015.0, 762.0, 235.0, 22.0 ],
+					"text" : "jit.matrix panelPositionsEdited 1 float32 20"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-170",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 90.0, 465.0, 150.0, 74.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 4,
+					"presentation_rect" : [ 7.5, 424.0, 150.0, 74.0 ],
+					"text" : "todo:\n- always choose right sound card automatically!\n- startup sound?\n"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"format" : 6,
 					"id" : "obj-168",
@@ -84,7 +133,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 960.0, 92.0, 71.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 221.0, 274.0, 71.0, 20.0 ],
+					"presentation_rect" : [ 219.0, 246.0, 71.0, 20.0 ],
 					"text" : "save preset"
 				}
 
@@ -99,7 +148,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 989.0, 126.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 197.0, 272.0, 24.0, 24.0 ]
+					"presentation_rect" : [ 195.0, 244.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -171,7 +220,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 31.0, 627.5, 216.0, 62.0 ],
-					"text" : "-0.427912 0.081144 0.057601 0.047083 0.03125 0.117037 0.008333 0.087233 0.139063 0.103988 0.093082 0.075846 0.060951"
+					"text" : "0.008333 0.163467 0.016667 -0.008333 0.016847 0.091758 0.016678 -0.008333 0.016667 0.008333 0.29416 -0.285817 0.29415"
 				}
 
 			}
@@ -240,7 +289,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 986.0, 753.0, 150.0, 20.0 ],
+					"patching_rect" : [ 950.5, 881.0, 150.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 412.5, 76.5, 57.0, 20.0 ],
 					"text" : "test zone"
@@ -7272,18 +7321,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-49",
-					"linecount" : 8,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 443.5, 151.0, 114.0 ],
-					"text" : "todo:\n- startup sound\n- see if other crossfade would work between speakers\n- new movement sound (overtones?)\n- add save preset"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-40",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -9271,13 +9308,13 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-3",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 327.0, 336.0, 362.0, 35.0 ],
-													"text" : "0.914062 0.3125 0.46875 0.289062 0.921875 0.257812 0.335938 0.640625 0.070312 0.695312 0. 0.867188 0.195312 0.210938"
+													"text" : "0.554688 0.304688 0.617188 0.109375 0.03125 0.34375 0.757812 0.304688 0.09375 0.070312 0.789062 0.492188 0.710938 0.546875"
 												}
 
 											}
@@ -11969,7 +12006,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 986.0, 749.0, 120.0, 120.0 ],
+					"patching_rect" : [ 950.5, 877.0, 120.0, 120.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 404.0, 72.5, 114.0, 109.5 ],
 					"rounded" : 16
@@ -12147,7 +12184,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-171", 0 ],
+					"order" : 0,
+					"source" : [ "obj-137", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-95", 0 ],
+					"order" : 1,
 					"source" : [ "obj-137", 0 ]
 				}
 
@@ -12233,6 +12279,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-90", 0 ],
 					"source" : [ "obj-168", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-172", 0 ],
+					"source" : [ "obj-171", 0 ]
 				}
 
 			}
@@ -12748,6 +12801,13 @@
 			}
 , 			{
 				"name" : "leolux_source.maxpat",
+				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "leolux_panelmovesound2.maxpat",
 				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
