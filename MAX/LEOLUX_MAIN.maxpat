@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1494.0, 128.0, 653.0, 795.0 ],
+		"rect" : [ 100.0, 98.0, 600.0, 600.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,45 @@
 		"subpatcher_template" : "",
 		"showontab" : 1,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-179",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 473.0, 155.5, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 11.595186999999999,
+					"id" : "obj-173",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 473.0, 184.0, 234.0, 21.0 ],
+					"text" : "window size 100 100 700 700, window exec"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-165",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 473.0, 207.0, 67.0, 22.0 ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+					"text" : "thispatcher"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"automouse" : 0,
 					"cols" : 20,
@@ -214,13 +253,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-159",
-					"linecount" : 4,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 31.0, 627.5, 216.0, 62.0 ],
-					"text" : "0.008333 0.163467 0.016667 -0.008333 0.016847 0.091758 0.016678 -0.008333 0.016667 0.008333 0.29416 -0.285817 0.29415"
+					"patching_rect" : [ 31.0, 627.5, 216.0, 22.0 ],
+					"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
 				}
 
 			}
@@ -687,8 +725,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -902,6 +940,8 @@
 , 							{
 								"name" : "Default M4L-1",
 								"default" : 								{
+									"fontface" : [ 1 ],
+									"fontsize" : [ 11.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -911,8 +951,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontface" : [ 1 ],
-									"fontsize" : [ 11.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -939,6 +977,7 @@
 , 							{
 								"name" : "jbb",
 								"default" : 								{
+									"fontsize" : [ 9.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -948,7 +987,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontsize" : [ 9.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -1119,8 +1157,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1415,7 +1453,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.12 ],
-					"blinkcolor" : [ 0.0, 0.996078431372549, 0.149019607843137, 1.0 ],
+					"blinkcolor" : [ 0.992156862745098, 0.0, 0.0, 1.0 ],
 					"id" : "obj-92",
 					"ignoreclick" : 1,
 					"maxclass" : "button",
@@ -2224,8 +2262,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2339,13 +2377,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-10",
-									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 209.0, 334.0, 373.0, 49.0 ],
-									"text" : "\"Macintosh HD:/Users/markijzerman/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX/audio\""
+									"text" : "\"Macintosh HD:/Users/lonk/Desktop/LEOLUXLONK/MAX/audio\""
 								}
 
 							}
@@ -2740,14 +2777,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 653.0, 769.0 ],
+						"rect" : [ 0.0, 26.0, 600.0, 574.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2833,8 +2870,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3415,8 +3452,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3672,6 +3709,8 @@
 , 											{
 												"name" : "Default M4L-1",
 												"default" : 												{
+													"fontface" : [ 1 ],
+													"fontsize" : [ 11.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -3681,8 +3720,6 @@
 														"proportion" : 0.39
 													}
 ,
-													"fontface" : [ 1 ],
-													"fontsize" : [ 11.0 ],
 													"fontname" : [ "Arial" ]
 												}
 ,
@@ -3709,6 +3746,7 @@
 , 											{
 												"name" : "jbb",
 												"default" : 												{
+													"fontsize" : [ 9.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -3718,7 +3756,6 @@
 														"proportion" : 0.39
 													}
 ,
-													"fontsize" : [ 9.0 ],
 													"fontname" : [ "Arial" ]
 												}
 ,
@@ -3787,8 +3824,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3884,11 +3921,11 @@
 													"patching_rect" : [ 1210.0, 141.0, 15.0, 15.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_mmax" : 1,
 															"parameter_shortname" : "live.toggle",
 															"parameter_enum" : [ "off", "on" ],
 															"parameter_type" : 2,
-															"parameter_longname" : "live.toggle[9]",
-															"parameter_mmax" : 1
+															"parameter_longname" : "live.toggle[9]"
 														}
 
 													}
@@ -3920,11 +3957,11 @@
 													"patching_rect" : [ 1090.0, 141.0, 15.0, 15.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_mmax" : 1,
 															"parameter_shortname" : "live.toggle",
 															"parameter_enum" : [ "off", "on" ],
 															"parameter_type" : 2,
-															"parameter_longname" : "live.toggle[8]",
-															"parameter_mmax" : 1
+															"parameter_longname" : "live.toggle[8]"
 														}
 
 													}
@@ -3973,14 +4010,14 @@
 													"patching_rect" : [ 980.0, 118.0, 44.0, 48.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_initial_enable" : 1,
+															"parameter_mmax" : 200.0,
 															"parameter_initial" : [ 100.0 ],
 															"parameter_shortname" : " ",
 															"parameter_type" : 0,
 															"parameter_unitstyle" : 5,
 															"parameter_mmin" : 50.0,
-															"parameter_longname" : "live.dial[3]",
-															"parameter_initial_enable" : 1,
-															"parameter_mmax" : 200.0
+															"parameter_longname" : "live.dial[3]"
 														}
 
 													}
@@ -4125,11 +4162,11 @@
 													"patching_rect" : [ 449.0, 138.0, 80.0, 15.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_mmax" : 4,
 															"parameter_shortname" : "live.menu[2]",
 															"parameter_enum" : [ "none", "preset1", "preset2", "preset3", "preset4" ],
 															"parameter_type" : 2,
-															"parameter_longname" : "live.menu[2]",
-															"parameter_mmax" : 4
+															"parameter_longname" : "live.menu[2]"
 														}
 
 													}
@@ -4195,11 +4232,11 @@
 													"patching_rect" : [ 640.0, 138.0, 15.0, 15.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_mmax" : 1,
 															"parameter_shortname" : "live.toggle",
 															"parameter_enum" : [ "off", "on" ],
 															"parameter_type" : 2,
-															"parameter_longname" : "live.toggle[23]",
-															"parameter_mmax" : 1
+															"parameter_longname" : "live.toggle[23]"
 														}
 
 													}
@@ -4595,6 +4632,8 @@
 , 											{
 												"name" : "Default M4L-1",
 												"default" : 												{
+													"fontface" : [ 1 ],
+													"fontsize" : [ 11.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -4604,8 +4643,6 @@
 														"proportion" : 0.39
 													}
 ,
-													"fontface" : [ 1 ],
-													"fontsize" : [ 11.0 ],
 													"fontname" : [ "Arial" ]
 												}
 ,
@@ -4632,6 +4669,7 @@
 , 											{
 												"name" : "jbb",
 												"default" : 												{
+													"fontsize" : [ 9.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -4641,7 +4679,6 @@
 														"proportion" : 0.39
 													}
 ,
-													"fontsize" : [ 9.0 ],
 													"fontname" : [ "Arial" ]
 												}
 ,
@@ -4724,12 +4761,12 @@
 									"patching_rect" : [ 552.0, 551.0, 48.0, 136.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_mmax" : 6.0,
 											"parameter_shortname" : "live.gain~[2]",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4,
 											"parameter_mmin" : -70.0,
-											"parameter_longname" : "live.gain~[2]",
-											"parameter_mmax" : 6.0
+											"parameter_longname" : "live.gain~[2]"
 										}
 
 									}
@@ -4765,8 +4802,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4823,8 +4860,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 0,
-															"revision" : 8,
+															"minor" : 1,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5318,8 +5355,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6002,13 +6039,13 @@
 									"relative" : 1,
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_mmax" : 6.0,
 											"parameter_initial" : [ 0.0 ],
 											"parameter_shortname" : " ",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4,
 											"parameter_mmin" : -70.0,
-											"parameter_longname" : "live.gain~[1]",
-											"parameter_mmax" : 6.0
+											"parameter_longname" : "live.gain~[1]"
 										}
 
 									}
@@ -6064,12 +6101,12 @@
 									"patching_rect" : [ 641.0, 164.0, 40.0, 20.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_mmax" : 100.0,
 											"parameter_shortname" : "spread",
 											"parameter_enum" : [ "val1", "val2" ],
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 5,
-											"parameter_longname" : "live.dial[76]",
-											"parameter_mmax" : 100.0
+											"parameter_longname" : "live.dial[76]"
 										}
 
 									}
@@ -6104,11 +6141,11 @@
 									"patching_rect" : [ 695.0, 136.0, 44.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_mmax" : 100.0,
 											"parameter_shortname" : "spread",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 5,
-											"parameter_longname" : "live.dial[64]",
-											"parameter_mmax" : 100.0
+											"parameter_longname" : "live.dial[64]"
 										}
 
 									}
@@ -6199,13 +6236,13 @@
 									"relative" : 1,
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_mmax" : 6.0,
 											"parameter_initial" : [ 0.0 ],
 											"parameter_shortname" : " ",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4,
 											"parameter_mmin" : -70.0,
-											"parameter_longname" : "live.gain~[38]",
-											"parameter_mmax" : 6.0
+											"parameter_longname" : "live.gain~[38]"
 										}
 
 									}
@@ -7215,6 +7252,8 @@
 , 							{
 								"name" : "Default M4L-1",
 								"default" : 								{
+									"fontface" : [ 1 ],
+									"fontsize" : [ 11.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -7224,8 +7263,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontface" : [ 1 ],
-									"fontsize" : [ 11.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -7252,6 +7289,7 @@
 , 							{
 								"name" : "jbb",
 								"default" : 								{
+									"fontsize" : [ 9.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -7261,7 +7299,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontsize" : [ 9.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -7429,14 +7466,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 653.0, 769.0 ],
+						"rect" : [ 0.0, 26.0, 600.0, 574.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7487,8 +7524,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7878,8 +7915,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 0,
-															"revision" : 8,
+															"minor" : 1,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9271,8 +9308,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10062,6 +10099,8 @@
 , 							{
 								"name" : "Default M4L-1",
 								"default" : 								{
+									"fontface" : [ 1 ],
+									"fontsize" : [ 11.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -10071,8 +10110,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontface" : [ 1 ],
-									"fontsize" : [ 11.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -10099,6 +10136,7 @@
 , 							{
 								"name" : "jbb",
 								"default" : 								{
+									"fontsize" : [ 9.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -10108,7 +10146,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontsize" : [ 9.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -10178,8 +10215,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -10415,8 +10452,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10630,8 +10667,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 0,
-															"revision" : 8,
+															"minor" : 1,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -11693,6 +11730,8 @@
 , 							{
 								"name" : "Default M4L-1",
 								"default" : 								{
+									"fontface" : [ 1 ],
+									"fontsize" : [ 11.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -11702,8 +11741,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontface" : [ 1 ],
-									"fontsize" : [ 11.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -11730,6 +11767,7 @@
 , 							{
 								"name" : "jbb",
 								"default" : 								{
+									"fontsize" : [ 9.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -11739,7 +11777,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontsize" : [ 9.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -12291,6 +12328,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-165", 0 ],
+					"source" : [ "obj-173", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-173", 0 ],
+					"source" : [ "obj-179", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-19", 0 ]
 				}
@@ -12718,36 +12769,36 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-21::obj-39::obj-62" : [ "live.text[12]", "live.text[9]", 0 ],
-			"obj-21::obj-46::obj-8" : [ "live.dial[3]", " ", 0 ],
-			"obj-21::obj-39::obj-58" : [ "live.text[10]", "live.text[9]", 0 ],
-			"obj-21::obj-39::obj-6::obj-3" : [ "live.text", "live.text", 0 ],
-			"obj-21::obj-14" : [ "live.dial[76]", "spread", 0 ],
-			"obj-26::obj-11" : [ "live.text[4]", "live.text", 0 ],
-			"obj-21::obj-30" : [ "live.dial[64]", "spread", 0 ],
-			"obj-21::obj-46::obj-12" : [ "live.toggle[9]", "live.toggle", 0 ],
-			"obj-21::obj-46::obj-48" : [ "live.toggle[23]", "live.toggle", 0 ],
-			"obj-21::obj-44" : [ "live.gain~[1]", " ", 0 ],
-			"obj-21::obj-7" : [ "live.gain~[2]", "live.gain~[2]", 0 ],
-			"obj-26::obj-16" : [ "live.text[5]", "live.text", 0 ],
-			"obj-26::obj-55" : [ "live.text[3]", "live.text", 0 ],
-			"obj-26::obj-606" : [ "live.text[2]", "live.text", 0 ],
-			"obj-21::obj-46::obj-11" : [ "live.toggle[8]", "live.toggle", 0 ],
-			"obj-21::obj-39::obj-6::obj-6" : [ "live.text[1]", "live.text", 0 ],
 			"obj-26::obj-607" : [ "live.button[1]", "live.button", 0 ],
+			"obj-26::obj-16" : [ "live.text[5]", "live.text", 0 ],
+			"obj-21::obj-14" : [ "live.dial[76]", "spread", 0 ],
+			"obj-21::obj-7" : [ "live.gain~[2]", "live.gain~[2]", 0 ],
+			"obj-21::obj-30" : [ "live.dial[64]", "spread", 0 ],
+			"obj-21::obj-46::obj-11" : [ "live.toggle[8]", "live.toggle", 0 ],
+			"obj-26::obj-11" : [ "live.text[4]", "live.text", 0 ],
+			"obj-21::obj-39::obj-62" : [ "live.text[12]", "live.text[9]", 0 ],
+			"obj-21::obj-39::obj-58" : [ "live.text[10]", "live.text[9]", 0 ],
+			"obj-21::obj-44" : [ "live.gain~[1]", " ", 0 ],
+			"obj-21::obj-39::obj-6::obj-3" : [ "live.text", "live.text", 0 ],
 			"obj-21::obj-46::obj-33" : [ "live.menu[2]", "live.menu[2]", 0 ],
 			"obj-21::obj-12" : [ "live.gain~[38]", " ", 0 ],
+			"obj-26::obj-55" : [ "live.text[3]", "live.text", 0 ],
+			"obj-26::obj-606" : [ "live.text[2]", "live.text", 0 ],
+			"obj-21::obj-46::obj-8" : [ "live.dial[3]", " ", 0 ],
+			"obj-21::obj-39::obj-6::obj-6" : [ "live.text[1]", "live.text", 0 ],
+			"obj-21::obj-46::obj-12" : [ "live.toggle[9]", "live.toggle", 0 ],
+			"obj-21::obj-46::obj-48" : [ "live.toggle[23]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
 
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-26::obj-11" : 				{
-					"parameter_longname" : "live.text[4]"
-				}
-,
 				"obj-26::obj-16" : 				{
 					"parameter_longname" : "live.text[5]"
+				}
+,
+				"obj-26::obj-11" : 				{
+					"parameter_longname" : "live.text[4]"
 				}
 ,
 				"obj-26::obj-55" : 				{
@@ -12760,7 +12811,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "leolux_objects.maxpat",
-				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"bootpath" : "~/Desktop/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -12774,69 +12825,69 @@
 , 			{
 				"name" : "spat5.dsp.control.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/spat5/patchers",
-				"patcherrelativepath" : "../../../../Max 8/Packages/spat5/patchers",
+				"patcherrelativepath" : "../../../Documents/Max 8/Packages/spat5/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "spat5.dsp.mute.bypass.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/spat5/patchers",
-				"patcherrelativepath" : "../../../../Max 8/Packages/spat5/patchers",
+				"patcherrelativepath" : "../../../Documents/Max 8/Packages/spat5/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "spat5.monitor.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/spat5/patchers",
-				"patcherrelativepath" : "../../../../Max 8/Packages/spat5/patchers",
+				"patcherrelativepath" : "../../../Documents/Max 8/Packages/spat5/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "leolux_speakers.maxpat",
-				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"bootpath" : "~/Desktop/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "leolux_source.maxpat",
-				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"bootpath" : "~/Desktop/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "leolux_panelmovesound2.maxpat",
-				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"bootpath" : "~/Desktop/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "yafr2.maxpat",
-				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"bootpath" : "~/Desktop/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "leolux_player.maxpat",
-				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"bootpath" : "~/Desktop/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "leolux_crossfader.maxpat",
-				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"bootpath" : "~/Desktop/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "FILTERFAMILYTPRESET.json",
-				"bootpath" : "~/Documents/Projects/2019_LEOLUX/LEOLUXLONK/MAX",
+				"bootpath" : "~/Desktop/LEOLUXLONK/MAX",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -12927,6 +12978,8 @@
 , 			{
 				"name" : "Default M4L-1",
 				"default" : 				{
+					"fontface" : [ 1 ],
+					"fontsize" : [ 11.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -12936,8 +12989,6 @@
 						"proportion" : 0.39
 					}
 ,
-					"fontface" : [ 1 ],
-					"fontsize" : [ 11.0 ],
 					"fontname" : [ "Arial" ]
 				}
 ,
@@ -12964,6 +13015,7 @@
 , 			{
 				"name" : "jbb",
 				"default" : 				{
+					"fontsize" : [ 9.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -12973,7 +13025,6 @@
 						"proportion" : 0.39
 					}
 ,
-					"fontsize" : [ 9.0 ],
 					"fontname" : [ "Arial" ]
 				}
 ,
