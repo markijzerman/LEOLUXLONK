@@ -5,12 +5,35 @@
 			"1" : 			{
 				"id" : 1,
 				"data" : 				{
+					"GAIN" : [ 0.225539648532867 ],
+					"ambVol" : [ 1.0 ],
 					"amtMeter" : [ 12 ],
-					"amtPanels" : [ 14 ],
+					"amtPanels" : [ 20 ],
 					"amtSensors" : [ 96 ],
-					"amtSmoothing" : [ 50 ],
-					"fadeInOutTime" : [ 0.5 ],
-					"silenceAfterSec" : [ 2 ]
+					"amtSmoothing" : [ 0 ],
+					"button" : [ 1.0 ],
+					"button[1]" : [ 0.0 ],
+					"button[2]" : [ 1.0 ],
+					"button[3]" : [ 0.0 ],
+					"button[4]" : [ 0.0 ],
+					"button[5]" : [ 0.0 ],
+					"button[6]" : [ 0.0 ],
+					"fadeInOutTime" : [ 0.4 ],
+					"live.gain~" : [ -29.413716832483516 ],
+					"musicVol" : [ 0.635689781606197 ],
+					"number" : [ 1 ],
+					"number[1]" : [ 12 ],
+					"number[2]" : [ 0.250000029802322 ],
+					"number[3]" : [ 5 ],
+					"number[4]" : [ 0 ],
+					"number[6]" : [ 0 ],
+					"number[7]" : [ 0.03383094727993 ],
+					"panelmoveModulo" : [ 5 ],
+					"silenceAfterSec" : [ 10 ],
+					"toggle" : [ 1 ],
+					"toggle[1]" : [ 0 ],
+					"toggle[2]" : [ 0 ],
+					"treshLBYL" : [ 0.14 ]
 				}
 
 			}

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 745.0, 720.0, 551.0, 477.0 ],
+		"rect" : [ 152.0, 126.0, 551.0, 477.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -104,7 +104,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 67.0, 166.0, 77.0, 22.0 ],
+					"patching_rect" : [ 57.0, 215.0, 77.0, 22.0 ],
 					"text" : "position $1 4"
 				}
 
@@ -120,8 +120,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -427,7 +427,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 412.0, 245.0, 67.0, 22.0 ],
+					"patching_rect" : [ 214.0, 295.0, 67.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -448,7 +448,7 @@
 					"numinlets" : 8,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 412.0, 276.0, 100.0, 23.0 ],
+					"patching_rect" : [ 214.0, 326.0, 100.0, 23.0 ],
 					"text" : "jit.gl.material"
 				}
 
@@ -462,7 +462,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 88.0, 370.0, 176.0, 23.0 ],
+					"patching_rect" : [ 57.0, 399.0, 176.0, 23.0 ],
 					"text" : "jit.gl.gridshape @shape cube"
 				}
 
@@ -476,7 +476,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 58.0, 200.0, 455.0, 23.0 ],
+					"patching_rect" : [ 57.0, 255.0, 455.0, 23.0 ],
 					"text" : "jit.phys.body @shape cube @scale 0.5 0.5 0.5 @damping 1. 1. @kinematic 1"
 				}
 
