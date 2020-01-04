@@ -4,7 +4,7 @@ Code for reading hall sensor data and passing data trough that it receives
 this data is then sent trough to another leolux reader teensy or a master teensy
 ------------------------------------*/
 
-#define cTeensyId 1
+#define cTeensyId 4
 #define cPinAmnt  8
 #define cSensTresh 100
 #define cTeensyAmnt 16
@@ -47,7 +47,7 @@ void loop() {
     sensorData[i] = analogRead(cPinArray[i]);
     
     //do some math so evereything can be done in the same for loop
-    //divide sensordata between to arrays
+    //divide sensordata between two arrays
     byte aDiv = i>>2;      //i>>2 == i/4 
     //invert count becease of byte order
     byte aMod = 3 - (i&3); //i&3 == i%4
